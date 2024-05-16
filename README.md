@@ -4,6 +4,9 @@
 |:---------|:---------|:---------|
 | Total Cost (s) | 28.217 s | 18.960 s |
 
+
+### Exec
+
 ```bash
 # Go
 ➜  v8 git:(main) time ./v8
@@ -18,7 +21,7 @@ Orders exported successfully to ./1.csv
 ./a1  16.47s user 2.52s system 100% cpu 18.960 total
 ```
 
-Same result
+### Check result
 ```bash
 ➜  publish git:(master) head ./1.csv
 Account,ClientOrderID,OmsCostTime1,MatchCostTime,OmsCostTime2,TotalCostTime
