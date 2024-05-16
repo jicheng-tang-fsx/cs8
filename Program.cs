@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Globalization;
+﻿using System.Globalization;
 using Newtonsoft.Json;
 
 using System.Text.RegularExpressions;
@@ -248,16 +245,17 @@ public class Program
             throw new FormatException("Invalid time format.");
         }
     }
+
     static void Main(string[] args)
     {
-        if (args.Length < 3)
-        {
-            Console.WriteLine("Usage: <program> <logFilePath> <outputCsvPath> \nVersion: 0.0.1");
-            return;
-        }
+        // if (args.Length < 3)
+        // {
+        //     Console.WriteLine("Usage: <program> <logFilePath> <outputCsvPath> \nVersion: 0.0.1");
+        //     return;
+        // }
 
-        var logFilePath = args[0];
-        var outputCsvPath = args[1];
+        var logFilePath = "/home/jicheng.tang/work/cs1/a1/oms_20240508.log";
+        var outputCsvPath = "./1.csv";
 
         try
         {
@@ -265,6 +263,7 @@ public class Program
             FillSendTime(orders, logFilePath);
             FillCostTime(orders);
             ExportCsv(orders, outputCsvPath);
+            ExportToJsonl(orders, "./1.jsonl");
 
             Console.WriteLine($"Orders exported successfully to {outputCsvPath}");
         }
